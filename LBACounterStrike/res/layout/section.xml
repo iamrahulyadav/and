@@ -1,0 +1,9 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	<ImageView android:src="@drawable/section"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:layout_gravity="center_vertical" />
+	<TextView android:id="@+id/textView" android:textColor="@color/textColor"
+		android:textStyle="bold" android:typeface="normal" android:textSize="28px"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:layout_gravity="center_vertical" />
+</merge>

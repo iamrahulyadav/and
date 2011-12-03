@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<com.google.ads.AdView android:id="@+id/adView"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" ads:adUnitId="a14ec2874d813a0"
+		ads:adSize="BANNER" ads:loadAdOnCreate="true" android:gravity="center" 
+		android:layout_gravity="center_horizontal" />
+
+	<ScrollView android:id="@+id/globaltab" android:background="@drawable/bg"
+		android:layout_height="fill_parent" android:layout_width="fill_parent"
+		android:fadingEdge="horizontal|vertical" android:layout_gravity="center_horizontal">
+
+		<LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical">
+
+			<LinearLayout android:tag="section0" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section0" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel0" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="voitureancienne"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voitureancienne" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="voitureretro"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voitureretro" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="voitureluxe"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voitureluxe" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="voitureviper"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voitureviper" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section1" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel1" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="busligne"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/busligne" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="bus"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/bus" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="camion"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/camion" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="camiontruck"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/camiontruck" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section2" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel2" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="trainvapeur"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/trainvapeur" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="tram"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/tram" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="metro1"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/metro1" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="trainsregionaux"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/trainsregionaux" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="traintgv"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/traintgv" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section3" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel3" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="tracteur1"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/tracteur1" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="moissonneusebatteuse"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/moissonneusebatteuse" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="enginagricole"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/enginagricole" /></FrameLayout>
+    
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section4" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section4" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel4" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="camionchantier"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/camionchantier" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="bulldozer"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/bulldozer" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="excavatrice"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/excavatrice" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="chargeur"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/chargeur" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section5" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section5" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel5" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="char1"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/char1" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="charus"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/charus" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="blindee"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/blindee" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="vehiculeinfanterie"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/vehiculeinfanterie" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section6" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section6" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel6" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="velocourse"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/velocourse" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="velovttenduro"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/velovttenduro" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section7" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section7" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel7" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="motocourse"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/motocourse" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="motocross"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/motocross" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="motogp"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/motogp" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="quad"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/quad" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="quadcross"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/quadcross" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section8" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section8" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel8" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="charrette"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/charrette" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="diligence"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/diligence" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="dragster"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/dragster" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="dragsterchauffe"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/dragsterchauffe" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section9" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section9" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel9" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="voilierpetit"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voilierpetit" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="voilier"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voilier" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="voiliertroismats"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/voiliertroismats" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section10" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section10" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel10" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="chalutierpetit"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/chalutierpetit" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="chalutierpeche"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/chalutierpeche" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="cargo"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/cargo" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section11" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section11" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel11" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="avionligne"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/avionligne" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="avionairbus"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/avionairbus" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="avionconcorde"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/avionconcorde" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section12" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section12" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel12" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="helico"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/helico" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="helicosauvetage"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/helicosauvetage" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="helicopteremilitaire"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/helicopteremilitaire" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section13" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section13" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel13" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="ariane4"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/ariane4" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="ariane5"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/ariane5" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="fusee"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/fusee" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="fusee_vega"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/fusee_vega" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			<LinearLayout android:tag="section14" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center_horizontal" android:onClick="collapseView">
+				<ImageView android:src="@drawable/section14" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+				<TextView android:id="@+id/textView" android:textColor="@color/textSectionColor" android:textStyle="bold" android:typeface="normal" android:textSize="48px" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:shadowColor="@color/textSectionShadow" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2" />
+			</LinearLayout>
+			<TableLayout android:tag="buttonPanel14" android:layout_height="wrap_content" android:layout_width="fill_parent">
+				<TableRow android:gravity="center" >
+
+<FrameLayout android:layout_height="fill_parent" android:tag="vaisseauspatial"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/vaisseauspatial" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="vaisseaufuturiste"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/vaisseaufuturiste" /></FrameLayout>
+</TableRow><TableRow android:gravity="center" >
+<FrameLayout android:layout_height="fill_parent" android:tag="espacexwing"> <Button android:id="@+id/button" android:textColor="@color/textColor" android:textColorHighlight="@color/textHighColor" android:textSize="36px" android:textStyle="bold" android:shadowColor="#FF000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="5" android:layout_height="fill_parent" android:layout_width="fill_parent" android:gravity="bottom|center_horizontal" android:layout_margin="5dp" android:onClick="clickButton" android:background="@drawable/espacexwing" /></FrameLayout>
+
+				</TableRow>
+			</TableLayout>
+			
+		</LinearLayout>
+
+	</ScrollView>
+
+</LinearLayout>

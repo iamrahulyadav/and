@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/preference_category_volume">
+		<CheckBoxPreference android:key="checkvolume" android:defaultValue="false" 
+			android:title="@string/checkvolume_title" android:summary="@string/checkvolume_summary"
+			android:disableDependentsState="true" />
+		<CheckBoxPreference android:key="volumemax" android:defaultValue="true"
+			android:title="@string/volumemax_title" android:summary="@string/volumemax_summary" 
+			android:dependency="checkvolume" />
+		<CheckBoxPreference android:key="volumerestore" android:defaultValue="true"
+			android:title="@string/volumerestore_title" android:summary="@string/volumerestore_summary" 
+			android:dependency="volumemax" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/preference_category_features">
+		<CheckBoxPreference android:key="lgclick" android:defaultValue="false"
+			android:title="@string/lgclick_title" android:summary="@string/lgclick_summary" />
+	    <CheckBoxPreference android:key="shake" android:defaultValue="true"
+			android:title="@string/shake_title" android:summary="@string/shake_summary" />
+		<CheckBoxPreference android:key="bgmusic" android:defaultValue="true"
+			android:title="@string/bgmusic_title" android:summary="@string/bgmusic_summary" />
+	</PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<com.google.ads.AdView android:id="@+id/adView"
+		android:layout_width="fill_parent"
+    android:layout_height="wrap_content" ads:adUnitId="a14e7df57043ebf"
+    ads:adSize="BANNER" ads:loadAdOnCreate="true" android:gravity="center"
+    android:layout_gravity="center_horizontal" />
+
+	<Gallery android:id="@+id/gallery" android:fadingEdge="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:minHeight="100dp" />
+
+	<TextView android:id="@+id/mycountry" 
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:textStyle="bold" android:textSize="36dp"
+		android:layout_width="fill_parent" android:gravity="center"
+		android:textColor="#FFFFFFFF" android:shadowColor="#FFAAAAAA"
+		android:shadowDx="2" android:shadowDy="2" android:shadowRadius="2"/>
+
+	<ImageView android:id="@+id/myflag" android:src="@android:drawable/ic_menu_help"
+		android:layout_gravity="center" android:layout_width="300dp"
+		android:layout_height="200dp" />
+
+	<TextView android:id="@+id/comment" android:text="@string/message_country"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:gravity="center" />
+
+</LinearLayout>

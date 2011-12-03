@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Animal Sounds for Kids</string>
+	<string name="widget_name">Animal Sounds for Kids</string>
+
+	<string name="soundFile">AnimalSounds.mp3</string>
+	<string name="soundTitle">Animal Sounds for Kids</string>
+
+	<string name="Ok">Ok</string>
+	<string name="quit_title">Quit ?</string>
+	<string name="quit_message">Do you want to leave this application?</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="goingon">The application goes on</string>
+
+	<string name="changelog_title">New</string>
+	<string name="about_title">About</string>
+
+	<string name="volume_title">Volume ?</string>
+	<string name="volume_question">The volume of your phone is low, do you want to set it to  MAX?</string>
+	<string name="volume_yes">Yes, set to max!</string>
+	<string name="volume_no">No, do not change volume...</string>
+
+	<string name="actions">Actions</string>
+	<string name="play">Play sound</string>
+	<string name="ringtone">Set as Ringtone</string>
+	<string name="ringtoneok">Your ringtone have been changed</string>
+	<string name="ringtoneko">Your ringtone have not been changed</string>
+	<string name="notification">Set as Notification</string>
+	<string name="notificationok">Your notification have been changed</string>
+	<string name="notificationko">Your notification have not been changed</string>
+
+	<string name="menuTitle1">Options</string>
+	<string name="menuTitleCondensed1">Options</string>
+	<string name="menuTitle2">About...</string>
+	<string name="menuTitleCondensed2">About</string>
+	<string name="menuTitle3">Quit</string>
+	<string name="menuTitleCondensed3">Quit</string>
+
+	<string name="preference_category_volume">Volume check</string>
+	<string name="checkvolume_title">Check Volume</string>
+	<string name="checkvolume_summary">Check that volume is high enough on startup</string>
+	<string name="volumemax_title">Volume Max</string>
+	<string name="volumemax_summary">Set volume to maximum on startup</string>
+	<string name="volumerestore_title">Volume Restore</string>
+	<string name="volumerestore_summary">Restore the previous volume level when exiting the application</string>
+	<string name="preference_category_features">Features</string>
+	<string name="lgclick_title">Long press feature</string>
+	<string name="lgclick_summary">Open a contextual menu when long press on a sound</string>
+	<string name="shake_title">Play on shake</string>
+	<string name="shake_summary">Play a random sound when shaking or rolling the device</string>
+	<string name="bgmusic_title">Startup music</string>
+	<string name="bgmusic_summary">Play a short music on startup</string>
+	<string name="save_setting">Save settings</string>
+	<string name="setting_saved">Settings saved</string>
+
+	<string-array name="textSectionArray">
+		<item>Pet</item>
+		<item>Farm</item>
+		<item>Wild</item>
+	</string-array>
+
+	<string-array name="textButtonArray">
+<item>Bear</item>
+<item>Bee</item>
+<item>Bird</item>
+<item>Camel</item>
+<item>Cat</item>
+<item>Cock</item>
+<item>Cow</item>
+<item>Dog</item>
+<item>Dolphin</item>
+<item>Donkey</item>
+<item>Duck</item>
+<item>Elephant</item>
+<item>Frog</item>
+<item>Goat</item>
+<item>Horse</item>
+<item>Lion</item>
+<item>Monkey</item>
+<item>Owl</item>
+<item>Pig</item>
+<item>Sealion</item>
+<item>Sheep</item>
+<item>Snake</item>
+<item>Tiger</item>
+<item>Wolf</item>
+	</string-array>
+
+</resources>
