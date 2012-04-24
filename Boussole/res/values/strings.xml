@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+    <string name="app_name">Boussole</string>
+    <string name="widget_name">Boussole</string>
+    <string name="title">Boussole</string>
+	<string name="button">...</string>
+	<string name="explain">Alignez l\'aiguille rouge sur le Nord.
+	    L\'aiguille rouge montre le Nord et la Rose des Vents montre les autres directions.</string>
+
+	<color name="textColor">#FFFFFFFF</color>
+	<color name="textShadow">#FFAAAAAA</color>
+	<color name="white">#FFFFFFFF</color>
+	<color name="black">#FF000000</color>
+	<color name="grey">#FFB3B3B3</color>
+
+	<color name="northPointer">#FFFF0000</color>
+	<color name="northShadow">#FFAA0000</color>
+	<color name="southPointer">#FF000000</color>
+	<color name="southShadow">#FF555555</color>
+	<color name="compassCircle">#00CCCCCC</color>
+	    
+	<string name="Ok">Ok</string>
+	<string name="changelog_title">Nouveautés</string>
+	<string name="about_title">A propos</string>
+ 
+	<string name="share_with">Partager avec...</string>
+	<string name="share_title">Un ami vous recommande...</string>
+	<string name="share_link">http://market.android.com/details?id=com.kiof.boussole</string>
+	
+	<string name="other_link">market://search?q=pub:Kiof</string>
+	
+	<string name="menuTitle1">Options</string>
+	<string name="menuTitleCondensed1">Options</string>
+	<string name="menuTitle2">Envoyer à un ami</string>
+	<string name="menuTitleCondensed2">Partager</string>
+	<string name="menuTitle3">Plus d\'applications gratuites</string>
+	<string name="menuTitleCondensed3">Plus d\'applications</string>
+	<string name="menuTitle4">A propos...</string>
+	<string name="menuTitleCondensed4">A propos</string>
+	<string name="menuTitle5">Quitter l\'application</string>
+	<string name="menuTitleCondensed5">Quitter</string>
+
+	<string name="preference_category_features">Fonctionnement</string>
+	<string name="sound_title">Son</string>
+	<string name="sound_summary">Jouer les sons de l\'application</string>
+	<string name="save_setting">Enregistrer les paramètres</string>
+	<string name="setting_saved">Paramètres enregistrés</string>
+	    
+</resources>

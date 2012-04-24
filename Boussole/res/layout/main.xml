@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        ads:adSize="BANNER"
+        ads:adUnitId="a14f6745f433b65"
+        android:gravity="center"
+        ads:loadAdOnCreate="true" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        android:shadowColor="@color/textShadow"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="@string/title"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/textColor"
+        android:textSize="48dp" />
+
+    <com.kiof.boussole.CompassView
+        android:id="@+id/compassView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10px"
+        android:background="@drawable/boussole"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/explain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:gravity="center"
+        android:text="@string/explain"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:textColor="@color/textColor" />
+
+</LinearLayout>
