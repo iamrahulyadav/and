@@ -7,12 +7,12 @@
 	<string name="button"></string>
 	<string name="explain">Press the button to switch on the light. Then press on the screen to switch off.</string>
 
-	<string name="Ok">Ok</string>
+	<string name="Ok">OK</string>
 	<string name="changelog_title">New</string>
 	<string name="about_title">About</string>
 
-	<string name="share_with">Partager avec...</string>
-	<string name="share_title">Un ami vous recommande...</string>
+	<string name="share_with">Partager avec&#8230;</string>
+	<string name="share_title">Un ami vous recommande&#8230;</string>
 	<string name="share_link">http://market.android.com/details?id=com.kiof.flashlight</string>
 	
 	<string name="other_link">market://search?q=pub:Kiof</string>
@@ -23,7 +23,7 @@
 	<string name="menuTitleCondensed2">Share</string>
 	<string name="menuTitle3">More free applications</string>
 	<string name="menuTitleCondensed3">More apps</string>
-	<string name="menuTitle4">About...</string>
+	<string name="menuTitle4">About&#8230;</string>
 	<string name="menuTitleCondensed4">About</string>
 	<string name="menuTitle5">Quit</string>
 	<string name="menuTitleCondensed5">Quit</string>

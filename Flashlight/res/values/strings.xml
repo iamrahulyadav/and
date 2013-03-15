@@ -13,12 +13,12 @@
 	<color name="black">#FF000000</color>
 	<color name="grey">#FFB3B3B3</color>
 
-	<string name="Ok">Ok</string>
+	<string name="Ok">OK</string>
 	<string name="changelog_title">Nouveautés</string>
 	<string name="about_title">A propos</string>
 
-	<string name="share_with">Partager avec...</string>
-	<string name="share_title">Un ami vous recommande...</string>
+	<string name="share_with">Partager avec&#8230;</string>
+	<string name="share_title">Un ami vous recommande&#8230;</string>
 	<string name="share_link">http://market.android.com/details?id=com.kiof.flashlight</string>
 	
 	<string name="other_link">market://search?q=pub:Kiof</string>
@@ -29,7 +29,7 @@
 	<string name="menuTitleCondensed2">Partager</string>
 	<string name="menuTitle3">Plus d\'applications gratuites</string>
 	<string name="menuTitleCondensed3">Plus d\'applications</string>
-	<string name="menuTitle4">A propos...</string>
+	<string name="menuTitle4">A propos&#8230;</string>
 	<string name="menuTitleCondensed4">A propos</string>
 	<string name="menuTitle5">Quitter l\'application</string>
 	<string name="menuTitleCondensed5">Quitter</string>
