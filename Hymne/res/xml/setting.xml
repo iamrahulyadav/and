@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 	<PreferenceCategory android:title="@string/preference_category_volume">
 		<CheckBoxPreference android:key="checkvolume"
-			android:defaultValue="false" android:title="@string/checkvolume_title"
+			android:defaultValue="true" android:title="@string/checkvolume_title"
 			android:summary="@string/checkvolume_summary"
 			android:disableDependentsState="true" />
 		<CheckBoxPreference android:key="volumemax"
@@ -17,7 +17,7 @@
 			android:defaultValue="true" android:title="@string/autoplay_title"
 			android:summary="@string/autoplay_summary" />
 		<CheckBoxPreference android:key="synchro"
-			android:defaultValue="false" android:title="@string/synchro_title"
+			android:defaultValue="true" android:title="@string/synchro_title"
 			android:summary="@string/synchro_summary" />
 		<CheckBoxPreference android:key="keepmycountry"
 			android:defaultValue="true" android:title="@string/keepmycountry_title"

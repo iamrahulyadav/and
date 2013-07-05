@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -14,7 +15,10 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.params.HttpParams;
 import org.json.JSONException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -259,17 +263,16 @@ public class HymneActivity extends Activity implements LocationListener {
 		long absTime = 0, duration = 0, msec = 0;
 		mViewSwitcher.showNext();
 
-		sysTime = System.currentTimeMillis();
-		if (ntpTime != 0) absTime = sysTime + ntpDelta;
-		else if (gpsTime != 0) absTime = sysTime + gpsDelta;
-		else absTime = sysTime;
-
 		if (mSharedPreferences.getBoolean(AUTO_PLAY, false)) {
 			mMediaPlayer = MediaPlayer.create(mContext, sounds.getResourceId(myCountry, 0));
 			if (mMediaPlayer != null) {
 				mMediaPlayer.setLooping(true);
 				duration = mMediaPlayer.getDuration();
 				if (mSharedPreferences.getBoolean(SYNCHRO, false)) {
+                    sysTime = System.currentTimeMillis();
+                    if (ntpTime != 0) absTime = sysTime + ntpDelta;
+                    else if (gpsTime != 0) absTime = sysTime + gpsDelta;
+                    else absTime = sysTime;
 					msec = absTime % duration;
 					mMediaPlayer.seekTo((int) msec);
 				}
@@ -314,6 +317,12 @@ public class HymneActivity extends Activity implements LocationListener {
 					nameValuePairs.add(new BasicNameValuePair("stat", stat));
 					httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 					Log.d(TAG, "httpPost : " + httpPost.getAllHeaders());
+
+                    /* Set TCP_NODELAY to true to reduce request latency (counterpart is increasing bandwidth usage) */
+//                    HttpParams httpParams = null;
+//                    httpParams = httpParams.setBooleanParameter(CoreConnectionPNames.TCP_NODELAY, true);
+//                    httpClient.setParams(httpParams);
+
 					httpResponse = httpClient.execute(httpPost);
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();

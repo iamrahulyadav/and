@@ -16,13 +16,13 @@
 
 package com.kiof.hymne;
 
-import android.os.SystemClock;
-import android.util.Config;
-import android.util.Log;
-import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+
+import android.os.SystemClock;
+import android.util.Config;
+import android.util.Log;
 
 /**
  * {@hide}
