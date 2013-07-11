@@ -78,8 +78,11 @@ public class HymneActivity extends Activity implements LocationListener {
 	protected static final String AUTO_PLAY = "autoplay";
 	protected static final String SYNCHRO = "synchro";
 	protected static final String TAG = "HymneActivity";
-	protected static final String NTP_SERVER = "canon.inria.fr";
-//	if (client.requestTime("pool.ntp.org", NETWORK_TIMEOUT)) {
+	protected static final String NTP_SERVER = "pool.ntp.org";
+//	protected static final String NTP_SERVER = "fr.ntp.org";
+//	protected static final String NTP_SERVER = "canon.inria.fr";
+	protected static final int NTP_NB_TRY = 5;
+	protected static final int NTP_SLEEP_TIME = 1000;
 	protected static final int TIME_WAIT = 3;
 	protected static final int RETURN_SETTING = 1;
 	protected static final int NETWORK_TIMEOUT = 10000;
@@ -88,7 +91,7 @@ public class HymneActivity extends Activity implements LocationListener {
 	private TypedArray sounds;
 	private int myCountry;
 	private int initVolume, maxVolume;
-	private long gpsTime, gpsDelta, ntpTime, ntpDelta, sysTime = 0;
+	private long gpsTime, gpsDelta, ntpTime, ntpDelta, newDelta, sysTime = 0;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -101,7 +104,7 @@ public class HymneActivity extends Activity implements LocationListener {
 		// Register NMEA listener
 		mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 		createNmeaListener();
-		mLocationManager.addNmeaListener(mNmeaListener);
+//		mLocationManager.addNmeaListener(mNmeaListener);
 		
 		// Launch Sntp request
 		createSntp();
@@ -270,8 +273,8 @@ public class HymneActivity extends Activity implements LocationListener {
 				duration = mMediaPlayer.getDuration();
 				if (mSharedPreferences.getBoolean(SYNCHRO, false)) {
                     sysTime = System.currentTimeMillis();
-                    if (ntpTime != 0) absTime = sysTime + ntpDelta;
-                    else if (gpsTime != 0) absTime = sysTime + gpsDelta;
+                    if (ntpDelta != 0) absTime = sysTime + ntpDelta;
+                    else if (gpsDelta != 0) absTime = sysTime + gpsDelta;
                     else absTime = sysTime;
 					msec = absTime % duration;
 					mMediaPlayer.seekTo((int) msec);
@@ -357,18 +360,30 @@ public class HymneActivity extends Activity implements LocationListener {
 	private void createSntp() {
 		Thread thread = new Thread() {
 			public void run() {
-				Looper.prepare(); // For Preparing Message Pool for the child
+//				Looper.prepare(); // For Preparing Message Pool for the child
 				// Thread
 				SntpClient client = new SntpClient();
-				if (client.requestTime(NTP_SERVER, NETWORK_TIMEOUT)) {
-					ntpTime = client.getNtpTime() + SystemClock.elapsedRealtime() - client.getNtpTimeReference();
-					ntpDelta = ntpTime - System.currentTimeMillis();
-					Log.d(TAG, "ntpDelta : " + Long.toString(ntpDelta));
+
+				for (int i=0; i<NTP_NB_TRY; i++) {
+					ntpTime = 0;
+					newDelta = 0;
+					if (client.requestTime(NTP_SERVER, NETWORK_TIMEOUT)) {
+						ntpTime = client.getNtpTime() + SystemClock.elapsedRealtime() - client.getNtpTimeReference();
+						newDelta = ntpTime - System.currentTimeMillis();
+						if (ntpDelta == 0 || (newDelta != 0 && newDelta<ntpDelta)) { ntpDelta = newDelta; };
+						Log.d(TAG, "ntpDelta : " + Long.toString(ntpDelta) + "(" + Long.toString(newDelta) + ")");
+					}
+					if (ntpTime == 0) {
+						Log.d(TAG, "SntpRequest failed");
+					}
+
+					try {
+						Thread.sleep(NTP_SLEEP_TIME);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+//					Looper.loop(); // Loop in the message queue
 				}
-				if (ntpTime != 0) {
-					Log.d(TAG, "SntpRequest");
-				}
-				Looper.loop(); // Loop in the message queue
 			}
 		};
 		thread.start();
@@ -392,20 +407,23 @@ public class HymneActivity extends Activity implements LocationListener {
 				String utcDate = tokens[9];
 //				Log.d(TAG, "utcDate : " + utcDate + "utcTime : " + utcTime);
 				// parse
-				SimpleDateFormat df = new SimpleDateFormat("HHmmss.S ddMMyy Z");
-				String dateStr = utcTime + " " + utcDate + " +0000";
+				
+				if (!utcTime.equals("") && !utcDate.equals("")) {
+					SimpleDateFormat df = new SimpleDateFormat("HHmmss.S ddMMyy Z");
+					String dateStr = utcTime + " " + utcDate + " +0000";
 
-				try {
-					Date date = df.parse(dateStr);
-					// do something with date here ...
-//					Log.d(TAG, "Date : " + date.toString());
-					gpsTime = date.getTime();
-					gpsDelta = gpsTime - System.currentTimeMillis();
-//					gpsDelta = gpsTime - System.currentTimeMillis() - (SystemClock.elapsedRealtime() - startNmea);
-					Log.d(TAG, "gpsTime : " + gpsTime + "(" + gpsDelta + ")");
-//					Log.d(TAG, "Delta clock : " + (SystemClock.elapsedRealtime() - startNmea));
-				} catch (java.text.ParseException e) {
-					e.printStackTrace();
+					try {
+						Date date = df.parse(dateStr);
+						// do something with date here ...
+						Log.d(TAG, "Date : " + date.toString());
+						gpsTime = date.getTime();
+						gpsDelta = gpsTime - System.currentTimeMillis();
+//						gpsDelta = gpsTime - System.currentTimeMillis() - (SystemClock.elapsedRealtime() - startNmea);
+						Log.d(TAG, "gpsTime : " + gpsTime + "(" + gpsDelta + ")");
+						//					Log.d(TAG, "Delta clock : " + (SystemClock.elapsedRealtime() - startNmea));
+					} catch (java.text.ParseException e) {
+						e.printStackTrace();
+					}
 				}
 				
 				if (gpsTime != 0) {

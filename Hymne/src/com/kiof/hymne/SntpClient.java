@@ -75,6 +75,7 @@ public class SntpClient
             DatagramSocket socket = new DatagramSocket();
             socket.setSoTimeout(timeout);
             InetAddress address = InetAddress.getByName(host);
+			Log.d(TAG, "NTP address : " + address.toString());
             byte[] buffer = new byte[NTP_PACKET_SIZE];
             DatagramPacket request = new DatagramPacket(buffer, buffer.length, address, NTP_PORT);
 
