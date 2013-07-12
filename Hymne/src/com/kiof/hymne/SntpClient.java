@@ -16,13 +16,13 @@
 
 package com.kiof.hymne;
 
+import android.os.SystemClock;
+import android.util.Log;
+
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-
-import android.os.SystemClock;
-import android.util.Config;
-import android.util.Log;
 
 /**
  * {@hide}
@@ -71,12 +71,14 @@ public class SntpClient
      * @return true if the transaction was successful.
      */
     public boolean requestTime(String host, int timeout) {
+        DatagramSocket socket = null;
         try {
-            DatagramSocket socket = new DatagramSocket();
+            socket = new DatagramSocket();
             socket.setSoTimeout(timeout);
             InetAddress address = InetAddress.getByName(host);
 			Log.d(TAG, "NTP address : " + address.toString());
-            byte[] buffer = new byte[NTP_PACKET_SIZE];
+
+			byte[] buffer = new byte[NTP_PACKET_SIZE];
             DatagramPacket request = new DatagramPacket(buffer, buffer.length, address, NTP_PORT);
 
             // set mode = 3 (client) and version = 3
@@ -96,7 +98,6 @@ public class SntpClient
             socket.receive(response);
             long responseTicks = SystemClock.elapsedRealtime();
             long responseTime = requestTime + (responseTicks - requestTicks);
-            socket.close();
 
             // extract the results
             long originateTime = readTimeStamp(buffer, ORIGINATE_TIME_OFFSET);
@@ -112,8 +113,8 @@ public class SntpClient
             //             = (transit + skew - transit + skew)/2
             //             = (2 * skew)/2 = skew
             long clockOffset = ((receiveTime - originateTime) + (transmitTime - responseTime))/2;
-            // if (Config.LOGD) Log.d(TAG, "round trip: " + roundTripTime + " ms");
-            // if (Config.LOGD) Log.d(TAG, "clock offset: " + clockOffset + " ms");
+            // if (false) Log.d(TAG, "round trip: " + roundTripTime + " ms");
+            // if (false) Log.d(TAG, "clock offset: " + clockOffset + " ms");
 
             // save our results - use the times on this side of the network latency
             // (response rather than request time)
@@ -121,8 +122,12 @@ public class SntpClient
             mNtpTimeReference = responseTicks;
             mRoundTripTime = roundTripTime;
         } catch (Exception e) {
-            if (Config.LOGD) Log.d(TAG, "request time failed: " + e);
+            if (false) Log.d(TAG, "request time failed: " + e);
             return false;
+        } finally {
+            if (socket != null) {
+                socket.close();
+            }
         }
 
         return true;

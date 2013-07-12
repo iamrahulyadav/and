@@ -363,19 +363,20 @@ public class HymneActivity extends Activity implements LocationListener {
 //				Looper.prepare(); // For Preparing Message Pool for the child
 				// Thread
 				SntpClient client = new SntpClient();
-
+				int ntpMin1, ntpMin2 = 0;
+				
 				for (int i=0; i<NTP_NB_TRY; i++) {
 					ntpTime = 0;
 					newDelta = 0;
 					if (client.requestTime(NTP_SERVER, NETWORK_TIMEOUT)) {
 						ntpTime = client.getNtpTime() + SystemClock.elapsedRealtime() - client.getNtpTimeReference();
 						newDelta = ntpTime - System.currentTimeMillis();
-						if (ntpDelta == 0 || (newDelta != 0 && newDelta<ntpDelta)) { ntpDelta = newDelta; };
-						Log.d(TAG, "ntpDelta : " + Long.toString(ntpDelta) + "(" + Long.toString(newDelta) + ")");
-					}
-					if (ntpTime == 0) {
+					} else {
 						Log.d(TAG, "SntpRequest failed");
 					}
+
+					if (ntpDelta == 0 || (newDelta != 0 && newDelta<ntpDelta)) { ntpDelta = newDelta; };
+					Log.d(TAG, "ntpDelta : " + Long.toString(ntpDelta) + "(" + Long.toString(newDelta) + ")");
 
 					try {
 						Thread.sleep(NTP_SLEEP_TIME);
