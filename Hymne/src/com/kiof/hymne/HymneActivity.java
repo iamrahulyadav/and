@@ -21,10 +21,12 @@ import org.json.JSONException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -91,7 +93,7 @@ public class HymneActivity extends Activity implements LocationListener {
 	private TypedArray sounds;
 	private int myCountry;
 	private int initVolume, maxVolume;
-	private long gpsTime, gpsDelta, ntpTime, ntpDelta, newDelta, sysTime = 0;
+	private long gpsTime = 0, gpsDelta = 0, ntpTime = 0, ntpDelta = 0, newDelta = 0, sysTime = 0;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -301,6 +303,13 @@ public class HymneActivity extends Activity implements LocationListener {
 				+ "|" + Build.PRODUCT + "|" + Build.RADIO + "|" + Build.SERIAL
 				+ "|" + Build.TAGS + "|" + Build.TIME + "|" + Build.TYPE + "|"
 				+ Build.UNKNOWN + "|" + Build.USER);
+		try {
+			stat.append("|" + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			stat.append("|NA");
+		}
+		
 		Log.d(TAG, "stat : " + stat);
 		postStat("http://kiof.free.fr/stats.php?", stat.toString());
 	}
@@ -319,7 +328,7 @@ public class HymneActivity extends Activity implements LocationListener {
 //					for (String key : params) { }
 					nameValuePairs.add(new BasicNameValuePair("stat", stat));
 					httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-					Log.d(TAG, "httpPost : " + httpPost.getAllHeaders());
+//					Log.d(TAG, "httpPost : " + httpPost.getAllHeaders());
 
                     /* Set TCP_NODELAY to true to reduce request latency (counterpart is increasing bandwidth usage) */
 //                    HttpParams httpParams = null;
@@ -363,7 +372,7 @@ public class HymneActivity extends Activity implements LocationListener {
 //				Looper.prepare(); // For Preparing Message Pool for the child
 				// Thread
 				SntpClient client = new SntpClient();
-				int ntpMin1, ntpMin2 = 0;
+				long ntpMin1 = 0, ntpMin2 = 0, ntpMin3 = 0;
 				
 				for (int i=0; i<NTP_NB_TRY; i++) {
 					ntpTime = 0;
@@ -371,12 +380,24 @@ public class HymneActivity extends Activity implements LocationListener {
 					if (client.requestTime(NTP_SERVER, NETWORK_TIMEOUT)) {
 						ntpTime = client.getNtpTime() + SystemClock.elapsedRealtime() - client.getNtpTimeReference();
 						newDelta = ntpTime - System.currentTimeMillis();
+						Log.d(TAG, "newDelta : " + Long.toString(newDelta));
 					} else {
 						Log.d(TAG, "SntpRequest failed");
 					}
 
 					if (ntpDelta == 0 || (newDelta != 0 && newDelta<ntpDelta)) { ntpDelta = newDelta; };
-					Log.d(TAG, "ntpDelta : " + Long.toString(ntpDelta) + "(" + Long.toString(newDelta) + ")");
+					if (ntpMin1 == 0 || (newDelta != 0 && newDelta<ntpMin1)) {
+						ntpMin3 = ntpMin2;
+						ntpMin2 = ntpMin1;
+						ntpMin1 = newDelta;
+					} else {
+						if (ntpMin2 == 0 || (newDelta != 0 && newDelta<ntpMin2)) {
+							ntpMin3 = ntpMin2;
+							ntpMin2 = newDelta;
+						} else {
+							if (ntpMin3 == 0 || (newDelta != 0 && newDelta<ntpMin3)) { ntpMin3 = newDelta; }
+						}
+					}
 
 					try {
 						Thread.sleep(NTP_SLEEP_TIME);
@@ -385,6 +406,8 @@ public class HymneActivity extends Activity implements LocationListener {
 					}
 //					Looper.loop(); // Loop in the message queue
 				}
+				ntpDelta = ntpMin3;
+				Log.d(TAG, "ntpMin1 : " + Long.toString(ntpMin1) + ", ntpMin2 : " + Long.toString(ntpMin2) + ", ntpMin3 : " + Long.toString(ntpMin3) + ", ntpDelta : " + Long.toString(ntpDelta));
 			}
 		};
 		thread.start();
