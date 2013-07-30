@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/preference_category_features" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sound"
+            android:summary="@string/sound_summary"
+            android:title="@string/sound_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="autowidget"
+            android:summary="@string/autowidget_summary"
+            android:title="@string/autowidget_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
