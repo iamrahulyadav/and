@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="app_name">Temperature</string>
+	<string name="message">Here is the actual current Temperature !</string>
+	
+	<string name="Ok">OK</string>
+	<string name="quit_title">Quit ?</string>
+	<string name="quit_message">Do you want to leave this application?</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
+	<string name="goingon">The application goes on</string>
 
-    <string name="app_name">Temperature</string>
-    <string name="action_settings">Settings</string>
-   
+	<string name="changelog_title">New</string>
+	<string name="about_title">About</string>
+
+	<string name="share_with">Share with&#8230;</string>
+	<string name="share_title">A friend recommend you&#8230;</string>
+	<string name="share_link">http://market.android.com/details?id=com.kiof.weather</string>
+	
+	<string name="other_link">market://search?q=pub:Kiof</string>
+	
+	<string name="menuTitle1">Options</string>
+	<string name="menuTitleCondensed1">Options</string>
+	<string name="menuTitle2">Send to a friend</string>
+	<string name="menuTitleCondensed2">Share</string>
+	<string name="menuTitle3">More free applications</string>
+	<string name="menuTitleCondensed3">More apps</string>
+	<string name="menuTitle4">About&#8230;</string>
+	<string name="menuTitleCondensed4">About</string>
+	<string name="menuTitle5">Quit</string>
+	<string name="menuTitleCondensed5">Quit</string>
+
+	<string name="preference_category_features">Features</string>
+	<string name="sound_title">Sound</string>
+	<string name="sound_summary">Play sounds of the application</string>
+	<string name="autowidget_title">Widget automatic</string>
+	<string name="autowidget_summary">Automatically switch on the light when launched from the Widget</string>
+	<string name="save_setting">Save settings</string>
+	<string name="setting_saved">Settings saved</string>
+	
 </resources>

@@ -9,16 +9,16 @@ import java.net.URL;
 
 public class WeatherHttpClient {
 
-	private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+	private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
 	private static String IMG_URL = "http://openweathermap.org/img/w/";
 
 	
-	public String getWeatherData(String location) {
+	public String getWeatherData(String request) {
 		HttpURLConnection con = null ;
 		InputStream is = null;
 
 		try {
-			con = (HttpURLConnection) ( new URL(BASE_URL + location)).openConnection();
+			con = (HttpURLConnection) ( new URL(BASE_URL + request)).openConnection();
 			con.setRequestMethod("GET");
 			con.setDoInput(true);
 			con.setDoOutput(true);
