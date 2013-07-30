@@ -1,4 +1,4 @@
-package com.kiof.weather;
+package com.kiof.temperature;
 
 
 public class Weather {

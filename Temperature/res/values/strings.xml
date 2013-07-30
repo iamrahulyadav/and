@@ -15,7 +15,7 @@
 
 	<string name="share_with">Share with&#8230;</string>
 	<string name="share_title">A friend recommend you&#8230;</string>
-	<string name="share_link">http://market.android.com/details?id=com.kiof.weather</string>
+	<string name="share_link">http://market.android.com/details?id=com.kiof.temperature</string>
 	
 	<string name="other_link">market://search?q=pub:Kiof</string>
 	

@@ -1,4 +1,4 @@
-package com.kiof.weather;
+package com.kiof.temperature;
 
 import org.json.JSONArray;
 import org.json.JSONException;

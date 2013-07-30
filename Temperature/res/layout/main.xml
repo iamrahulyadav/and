@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         ads:adSize="BANNER"
-        ads:adUnitId="a14e7df57043ebf"
+        ads:adUnitId="a151f7e3c484702"
         ads:loadAdOnCreate="true"
         android:gravity="center" />
 

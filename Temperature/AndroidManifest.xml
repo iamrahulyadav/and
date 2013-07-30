@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Temperature"
+            android:name="com.kiof.temperature.Temperature"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.DeviceDefault" >
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Setting"
+            android:name="com.kiof.temperature.Setting"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.google.ads.AdActivity"

@@ -1,17 +1,12 @@
-package com.kiof.weather;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+package com.kiof.temperature;
 
 import org.json.JSONException;
 
-import android.location.GpsStatus;
+import com.kiof.weather.R;
+
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.GpsStatus.NmeaListener;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -27,14 +22,11 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.Html;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ViewSwitcher;
 
 public class Temperature extends Activity {
 
@@ -82,7 +74,7 @@ public class Temperature extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		String request = "?lat=35&lon=139";
+		String initRequest = "?lat=35&lon=139";
 
 		cityText = (TextView) findViewById(R.id.cityText);
 		condDescr = (TextView) findViewById(R.id.condDescr);
@@ -106,7 +98,7 @@ public class Temperature extends Activity {
 		lastKnownLocation = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
 		JSONWeatherTask weatherTask = new JSONWeatherTask();
-		weatherTask.execute(new String[] { request });
+		weatherTask.execute(new String[] { initRequest });
 	}
 	
 	// Define a listener that responds to location updates
@@ -119,6 +111,10 @@ public class Temperature extends Activity {
 	    private void makeUseOfNewLocation(Location location) {
 			// TODO Auto-generated method stub
 			Toast.makeText(mContext, "Location updated", Toast.LENGTH_SHORT).show();
+			String request = "?lat=" + location.getLatitude() + "&lon=" + location.getLongitude();
+
+			JSONWeatherTask weatherTask = new JSONWeatherTask();
+			weatherTask.execute(new String[] { request });
 		}
 
 		public void onStatusChanged(String provider, int status, Bundle extras) {}

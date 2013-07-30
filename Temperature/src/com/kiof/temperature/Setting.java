@@ -1,4 +1,6 @@
-package com.kiof.weather;
+package com.kiof.temperature;
+
+import com.kiof.weather.R;
 
 import android.annotation.TargetApi;
 import android.os.Build;
