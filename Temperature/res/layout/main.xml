@@ -1,118 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-    android:id="@+id/profileSwitcher"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:animateFirstView="true"
-    android:inAnimation="@android:anim/slide_in_left"
-    android:orientation="vertical"
-    android:outAnimation="@android:anim/slide_out_right" >
-
-    <com.google.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        ads:adSize="BANNER"
-        ads:adUnitId="a151f7e3c484702"
-        ads:loadAdOnCreate="true"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/cityText"
-        style="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+    android:layout_height="fill_parent" >
 
     <ImageView
-        android:id="@+id/condIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/cityText" />
-
-    <TextView
-        android:id="@+id/condDescr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/condIcon" />
-
-    <TextView
-        android:id="@+id/temp"
-        style="@style/tempStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/condDescr" />
-
-    <TextView
-        android:id="@+id/pressLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/temp"
-        android:text="Pressure" />
-
-    <TextView
-        android:id="@+id/press"
-        style="@style/valData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/pressLab" />
-
-    <TextView
-        android:id="@+id/humLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/press"
-        android:text="Humidity" />
-
-    <TextView
-        android:id="@+id/hum"
-        style="@style/valData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/humLab" />
-
-    <TextView
-        android:id="@+id/windLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/hum"
-        android:text="Wind" />
-
-    <TextView
-        android:id="@+id/windSpeed"
-        style="@style/valData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/windLab" />
-
-    <TextView
-        android:id="@+id/windDeg"
-        style="@style/valData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/windSpeed" />
-
-    <TextView
-        android:id="@+id/comment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
-        android:text="@string/message"
-        android:textAppearance="@android:style/TextAppearance.Small" />
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <com.google.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            ads:adSize="BANNER"
+            ads:adUnitId="a151f7e3c484702"
+            ads:loadAdOnCreate="true"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/profileSwitcher"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/cityText"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/condIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/condIcon" />
+
+            <TextView
+                android:id="@+id/condDescr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/temp"
+                style="@style/tempStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/pressLab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pressure" />
+
+            <TextView
+                android:id="@+id/press"
+                style="@style/valData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/humLab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity" />
+
+            <TextView
+                android:id="@+id/hum"
+                style="@style/valData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/windLab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind" />
+
+            <TextView
+                android:id="@+id/windSpeed"
+                style="@style/valData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/windDeg"
+                style="@style/valData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="@string/message"
+                android:textAppearance="@android:style/TextAppearance.Small" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

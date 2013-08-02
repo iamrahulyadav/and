@@ -38,4 +38,10 @@
 	<string name="save_setting">Save settings</string>
 	<string name="setting_saved">Settings saved</string>
 	
+	<string name="background">Background</string>
+    <string name="condIcon">Icon Condition</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+
 </resources>
