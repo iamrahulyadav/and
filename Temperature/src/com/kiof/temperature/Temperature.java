@@ -1,9 +1,6 @@
 package com.kiof.temperature;
 
 import org.json.JSONException;
-
-import com.kiof.weather.R;
-
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -13,6 +10,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,14 +20,19 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Temperature extends Activity {
+public class Temperature extends FragmentActivity {
 
 	private Context mContext;
 	private Resources mResources;
@@ -67,14 +71,32 @@ public class Temperature extends Activity {
 	private TextView windSpeed;
 	private TextView windDeg;
 
-	private TextView hum;
+    private static final int NUM_PAGES = 5;
+    
+	 /**
+     * The pager widget, which handles animation and allows swiping horizontally to access previous
+     * and next wizard steps.
+     */
+    private ViewPager mPager;
+
+    /**
+     * The pager adapter, which provides the pages to the view pager widget.
+     */
+    private PagerAdapter mPagerAdapter;
+    
+    private TextView hum;
 	private ImageView imgView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		String initRequest = "?lat=35&lon=139";
+//		String initRequest = "?lat=35&lon=139";
+		String initRequest = "?lat=&lon=";
+
+		mContext = this.getApplicationContext();
+		mResources = this.getResources();
+		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 
 		cityText = (TextView) findViewById(R.id.cityText);
 		condDescr = (TextView) findViewById(R.id.condDescr);
@@ -85,10 +107,10 @@ public class Temperature extends Activity {
 		windDeg = (TextView) findViewById(R.id.windDeg);
 		imgView = (ImageView) findViewById(R.id.condIcon);
 
-		mContext = this.getApplicationContext();
-		mResources = this.getResources();
-		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
-
+//		cityText.setVisibility(View.GONE);
+		cityText.setText("City");
+		cityText.setVisibility(View.VISIBLE);
+		
 		// Acquire a reference to the system Location Manager
 		mLocationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -99,6 +121,54 @@ public class Temperature extends Activity {
 
 		JSONWeatherTask weatherTask = new JSONWeatherTask();
 		weatherTask.execute(new String[] { initRequest });
+		
+	      // Instantiate a ViewPager and a PagerAdapter.
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
+        mPager.setAdapter(mPagerAdapter);
+        mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                // When changing pages, reset the action bar actions since they are dependent
+                // on which page is currently active. An alternative approach is to have each
+                // fragment expose actions itself (rather than the activity exposing actions),
+                // but for simplicity, the activity provides the actions in this sample.
+                invalidateOptionsMenu();
+            }
+        });
+
+	}
+
+	@Override
+	public void onBackPressed() {
+		if (mPager.getCurrentItem() == 0) {
+			// If the user is currently looking at the first step, allow the
+			// system to handle the
+			// Back button. This calls finish() on this activity and pops the
+			// back stack.
+			super.onBackPressed();
+		} else {
+			// Otherwise, select the previous step.
+			mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+		}
+	}
+
+	/**
+	 * A simple pager adapter that represents 5 ScreenSlidePageFragment objects,
+	 * in sequence.
+	 */
+	private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+		public ScreenSlidePagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		public ScreenSlidePageFragment getItem(int position) {
+			return new ScreenSlidePageFragment();
+		}
+
+		public int getCount() {
+			return NUM_PAGES;
+		}
 	}
 	
 	// Define a listener that responds to location updates
@@ -109,7 +179,6 @@ public class Temperature extends Activity {
 	    }
 
 	    private void makeUseOfNewLocation(Location location) {
-			// TODO Auto-generated method stub
 			Toast.makeText(mContext, "Location updated", Toast.LENGTH_SHORT).show();
 			String request = "?lat=" + location.getLatitude() + "&lon=" + location.getLongitude();
 
@@ -154,6 +223,8 @@ public class Temperature extends Activity {
 			}
 
 			cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
+			cityText.setVisibility(View.VISIBLE);
+
 			condDescr.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescr() + ")");
 			temp.setText("" + Math.round((weather.temperature.getTemp() - 275.15)) + "°C");
 			hum.setText("" + weather.currentCondition.getHumidity() + "%");
